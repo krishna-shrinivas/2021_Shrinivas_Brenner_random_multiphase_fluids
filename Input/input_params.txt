@@ -1,0 +1,57 @@
+#   Initialization parameters
+#   This line will not be read & similarly blank lines
+
+#   Number of components excluding solvent, default =3
+#   Number of dimensions, default =2
+NCom,8
+dim,2
+
+#   Number of lattice points (Should be 2^(integer))
+N,64
+
+#   Number of steps (start,end)
+start,0
+end,1000e3
+
+#   Solvent fraction (=1-beta), if None, then beta = Ncom/(Ncom+1)
+beta,0.5
+
+#   Physical parameters of the simulation
+lmbda,0.01
+dt,5.0e-6
+kappa_mag,1.0
+
+#   Rate of reactions (for starter, can be a more complex reaction matrix)
+kon,0.0
+
+#   Logging parameters for output (in # of steps)
+outPrint,5e3
+outSave,5e3
+
+#   User-defined seed if so specified, can be not be passed or sent as None to generate random seed
+seed,None
+
+#   Parameters for random chi_parameters (Note that the chi_std is a multiplier to sqrt(N), >1 implies instability)
+chi_mean,0.0
+chi_std,2.5
+
+#   1.0 if chi_std needs to be multiplied by NCom**0.5 and 0.0 otherwise
+chi_std_flag,1.0
+
+#   Chi_s parameters
+chi_s,0.0
+
+#   Parameters for polymer volumes
+r_mu,1.0
+
+#   Run flag - this determines whether to run PF simulations or just initialize run to report on Jacobian, Use 0 to turn off
+run_flag,1
+
+#   Adaptive time_step flag: If true, it re-normalizes initial time-step by t_ref * (0.5/mag(min(J))) * (1.0/(r_mu))
+timestep_flag,0
+
+#   Mobility flag: If true, it sets Mi = Mci(1-ci), else Mi = Mci
+mobility_flag,1.0
+
+#   Noise_strength
+noise_strength,0.01
